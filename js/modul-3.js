@@ -299,3 +299,227 @@
 // console.log(createArrayOfNumbers(14, 17));
 // console.log(createArrayOfNumbers(29, 34));
 // console.log(createArrayOfNumbers());
+
+
+// !!!Ітерація по масиву
+// Ітерація по масиву з використанням циклу for дозволяє перебрати елементи масиву
+// і виконати певну дію для кожного елемента.
+
+// const planets = ["Earth", "Mars", "Venus"];
+
+// for (let i = 0; i < planets.length; i += 1) {
+//   console.log(planets[i]);
+// }
+
+// Початкове значення лічильника i встановлюється як 0 і цикл продовжується, поки i менше за довжину масиву planets.length
+// На кожній ітерації циклу використовується planets[i] для доступу до елементів масиву за їх індексом i
+// Значення лічильника i з кожною ітерацією збільшується на 1 (вираз i += 1)
+// Умова i < planets.length буде повертати true для значень лічильника 0, 1 і 2. Коли i досягне значення 3, умова стане false і цикл зупиниться
+
+// !====Задача====!
+// Функція calculateTotalPrice(order) приймає один параметр order - масив чисел.
+// Доповни функцію так, щоб вона повертала загальну суму елементів з масиву order.
+
+// function calculateTotalPrice(order) {
+//   let totalPrice = 0;
+//   for (let i = 0; i < order.length; i++) {
+//     totalPrice += order[i];
+//   }
+//   return totalPrice
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4])); // 138
+// console.log(calculateTotalPrice([164, 48, 291])); // 503
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176])); // 1116
+
+// !====Задача====!
+// Функція getEvenNumbers(start, end) має два параметри start та end, які є цілими числами.
+// Доповни код функції так, щоб вона повертала масив усіх парних чисел від start до end.
+// Якщо жодного парного числа немає, то масив має бути пустим.Парним вважається число,
+// яке ділиться на 2 без остачі (10 % 2 === 0). Використовуй цикл for.
+
+// function getEvenNumbers(start, end) {
+//   const evenNumbers = [];
+//   for (let i = start; i <= end; i++) {
+//     if (i % 2 === 0) {
+//       evenNumbers.push(i);
+//     }
+//   }
+//   return evenNumbers;
+// }
+
+// console.log(getEvenNumbers(2, 5));
+// console.log(getEvenNumbers(8, 8));
+// console.log(getEvenNumbers(7, 7));
+
+// !Метод includes()
+// Метод масиву includes() використовується для перевірки наявності певного елемента в масиві.
+
+// const planets = ["Earth", "Mars", "Venus"];
+
+// console.log(planets.includes("Earth")); // true
+// console.log(planets.includes("Jupiter")); // false
+
+// const fruits = ["apple", "banana", "orange"];
+
+// if (fruits.includes("banana")) {
+//   console.log("The array has an element banana");
+// } else {
+//   console.log("Array does not contain banana element");
+// }
+
+// !====Задача====!
+// Функція checkStorage(storage, item) приймає два параметри:
+// storage - масив рядків, що описує доступні товари на складі
+// item - рядок з назвою товара, наявність якого потрібно перевірити
+// Доповни код функції таким чином, щоб вона перевіряла, чи присутній такий товар в масиві storage і повертала:
+// рядок "<item> is available to order!", де item - це назва товара, якщо товар було знайдено
+// рядок "Sorry! We are out of stock!", якщо такого товара немає в масиві
+// Зроби так, щоб пошук за ім'ям товару був незалежний від регістру, тобто наприклад "plum"
+// і "pLuM" мають бути знайдені у масиві ["apple", "plum", "pear"].
+
+// function checkStorage(storage, item) {
+//   const lowerItem = item.toLowerCase();
+//   if (storage.includes(lowerItem)) {
+//     return `${lowerItem} is available to order!`;
+//   } else {
+//     return "Sorry! We are out of stock!";
+//   }
+// }
+
+// console.log(checkStorage(["apple", "plum", "pear"], "plum"));
+// console.log(checkStorage(["apple", "plum", "pear"], "pLuM"));
+// console.log(checkStorage(["apple", "plum", "pear"], "pEAr"));
+// console.log(checkStorage(["apple", "plum", "pear"], "carrot"));
+
+// !====Задача====!
+// Перед розв'язанням цієї задачі варто зазначити, що таке спільні елементи.
+// Спільними елементами масивів називають ті елементи, які присутні у всіх масивах.
+// Наприклад, у двох масивах [1, 3, 5] і [0, 8, 5, 3] спільними будуть числа 3 і 5, оскільки вони присутні в обох вхідних масивах. А числа 0, 1 і 8 присутні тільки в одному з масивів.
+// Функція getCommonElements(array1, array2), приймає два масиви (array1 та array2) довільної довжини в якості параметрів.
+// Доповни код функції:
+// Створи порожній масив для зберігання нового масиву.
+// Використай цикл for для ітерації кожного елемента у array1.
+// У тілі циклу перевір, чи поточний елемент існує у array2 за допомогою методу includes.
+// Якщо він існує, то додай елемент до нового масиву.
+// Поверни наповнений масив спільних елементів як результат роботи функції.
+
+// function getCommonElements(array1, array2) {
+//   const commonElements = [];
+//   for (let i = 0; i < array1.length; i++) {
+//     if (array2.includes(array1[i])) {
+//       commonElements.push(array1[i]);
+//     }
+//   }
+//   return commonElements;
+// }
+
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
+// console.log(getCommonElements([1, 2, 3], [10, 20, 30]));
+
+
+// !Цикл for...of
+// Цикл for...of — це зручний спосіб перебору масиву. Тіло циклу буде виконуватися на
+// кожному елементі масиву.Це гарна заміна циклу for, якщо не потрібен доступ до лічильника.
+
+// !====Задача====!
+// Доповни код функції calculateTotalPrice(order) так, щоб вона повертала загальну суму
+// чисел в масиві order.Використай цикл for...of для перебору масиву.
+
+// function calculateTotalPrice(order) {
+//     let totalPrice = 0;
+
+//     for (const item of order) {
+//         totalPrice += item;
+//     }
+
+//     return totalPrice;
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+// console.log(calculateTotalPrice([]));
+
+
+// !Псевдомасив arguments
+// Коли ти викликаєш функцію з аргументами, arguments автоматично створюється всередині
+// цієї функції і заповнюється переданими значеннями аргументів.
+
+// function sum(a, b) {
+//   console.log(arguments);
+//   return a + b;
+// }
+
+// sum(2, 5);
+
+
+// function multiply() {
+//   let total = 1;
+
+//   for (const arg of arguments) {
+//     total *= arg;
+//   }
+
+//   return total;
+// }
+
+// console.log(multiply(1, 2, 3)); //  6
+// console.log(multiply(1, 2, 3, 4, 5)); //  120
+
+
+// function foo() {
+//   // У змінній args буде повноцінний масив з усіх аргументів
+//   const args = Array.from(arguments);
+// 	return args.join("-");
+// }
+
+// foo(1, 2, 3); // Поверне "1-2-3"
+
+
+// !====Задача====!
+// Функція createReversedArray() може приймати довільну кількість аргументів.
+// Доповни код функції так, щоб вона повертала масив усіх аргументів, але в масиві вони повинні йти у зворотному порядку.Тобто, при виклику createReversedArray(1, 2, 3), функція має повернути масив[3, 2, 1]. Використовуй цикл або метод масиву toReversed(), який застосовується до масиву і результатом роботи повертає новий масив з елементами у зворотньому порядку.
+
+// function createReversedArray() {
+//   const array = Array.from(arguments);
+//   return array.toReversed();
+// }
+
+// console.log(createReversedArray(164, 48, 291)); //  [291, 48, 164]
+// console.log(createReversedArray(412, 371, 94, 63, 176)); // [176, 63, 94, 371, 412]
+
+
+// !Параметри за замовчуванням
+
+// function count(from, to, step = 1) {
+//   console.log(`from: ${from}, to: ${to}, step: ${step}`);
+
+//   for (let i = from; i <= to; i += step) {
+//   // ...
+//   }
+// }
+
+// count(1, 15, 4); // "from: 1, to: 15, step: 4"
+// count(1, 15); // "from: 1, to: 15, step: 1"
+
+// !====Задача====!
+// Функція calculateTax(amount, taxRate) оголошує два параметри:
+// amount - число, сума від якої потрібно обчислити податок. Обов'язковий параметр.
+// taxRate - число, податкова ставка. Необов'язковий параметр. За замовчуванням його значення має бути 0.2.
+// Доповни код функції так, щоб вона повертала суму податку - результат множення суми на податкову ставку.
+
+// function calculateTax(amount, taxRate = 0.2) {
+//   return amount * taxRate;
+// }
+
+// console.log(calculateTax(100, 0.1)) // 10
+// console.log(calculateTax(200, 0.2)) // 40
+// console.log(calculateTax(100)) // 20
+// console.log(calculateTax(200)) // 40
+
+
+// !Функціональний вираз
+
+// const multiply = function (x, y, z) {
+//   console.log(x * y * z);
+// };
